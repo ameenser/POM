@@ -10,7 +10,6 @@ class LoginPage(BasePage):
         self.open(base_url)
 
 
-
     def login(self, username, password):
         self.type(self.USERNAME, username)
         self.type(self.PASSWORD, password)
