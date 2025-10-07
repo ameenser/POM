@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import utils.config as config
 from pages.login_page import LoginPage
+import tempfile
 
 
 class Pages:
@@ -18,6 +19,10 @@ def driver():
     driver = webdriver.Chrome(service=Service(), options=options)
 
     # Navigate once at the start
+    user_data_dir = tempfile.mkdtemp()
+    options.add_argument(f"--user-data-dir={user_data_dir}")
+
+    service = Service("/usr/local/bin/chromedriver")
     driver.get(config.BASE_URL)
 
     yield driver   # keep driver alive for all tests

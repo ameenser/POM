@@ -7,6 +7,7 @@ class LoginPage(BasePage):
     LOGIN_BTN = (By.ID, "login-button")
     ERROR_MSG = (By.CSS_SELECTOR, "h3[data-test='error']")
     HEADER_LABEL = (By.CLASS_NAME, "header_label")
+
     def open_login(self, base_url):
         self.open(base_url)
 

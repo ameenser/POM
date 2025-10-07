@@ -26,8 +26,5 @@ class BasePage:
         el = self.find(locator)
         return el.text
 
-
-
-###########################
     def get_current_url(self):
         return self.driver.current_url
